@@ -26,6 +26,29 @@ public class ValidatorRule1 implements Validator{
 			 log.error("eror occured amount can not be nagative");
 			throw new ValidationException(ErrorCodeEnum.INVALID_AMOUNT.getErrorCode(),ErrorCodeEnum.INVALID_AMOUNT.getErrorMassage(),HttpStatus.BAD_REQUEST) ;
 		}
+	 if (paymentRequestDTO.getCurrency() == null || paymentRequestDTO.getCurrency().isBlank()) {
+            log.error("Validation failed: currency cannot be null or blank");
+            throw new ValidationException("400", "Currency must be provided", HttpStatus.BAD_REQUEST);
+        }
+
+
+        if (paymentRequestDTO.getField1() != null && paymentRequestDTO.getField1().equalsIgnoreCase("INVALID")) {
+            log.error("Validation failed: Field1 contains invalid value");
+            throw new ValidationException("400", "Invalid value in field1", HttpStatus.BAD_REQUEST);
+        }
+    
+
+        if (paymentRequestDTO.getField2() != null && paymentRequestDTO.getField2().equalsIgnoreCase("INVALID")) {
+            log.error("Validation failed: Field2 contains invalid value");
+            throw new ValidationException("400", "Invalid value in field2", HttpStatus.BAD_REQUEST);
+        }
+    
+
+        if (paymentRequestDTO.getField3() != null && paymentRequestDTO.getField3().equalsIgnoreCase("INVALID")) {
+            log.error("Validation failed: Field3 contains invalid value");
+            throw new ValidationException("400", "Invalid value in field3", HttpStatus.BAD_REQUEST);
+        }
+    
 		 
 	 }
 	   
