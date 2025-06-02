@@ -8,7 +8,7 @@ Built using **Spring Boot**, this enterprise-grade engine supports **real-time v
 
 ---
 
-## 🏦 Key Features
+## Key Features
 
 ###  Payment Lifecycle Management
 - Create, validate, authorize, and post payment instructions
